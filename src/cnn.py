@@ -62,7 +62,7 @@ model.save("../models/" +"resnet_diabetic_retinopathy"+ ".h5")
 
 predictions = model.predict_generator(test_batches, steps = 4, verbose = 2)
 
-score = evaluate_generator(test_batches, steps=4, verbose = 0)
+score = model.evaluate_generator(test_batches, steps=4, verbose = 0)
 
 print('Test score:', score[0])
 print('Test accuracy:', score[1])
